@@ -9,7 +9,11 @@ const router = AutoRouter();
 * Demonstrations of regular routing.
 */
 router.get('/', async (request, env) => {
-  	return new Response(homepage());
+  	return new Response(homepage(), {
+		headers: {
+			'content-type': 'text/html'
+		}
+	});
 })
 
 router.get('/ping', (request, env) => {
