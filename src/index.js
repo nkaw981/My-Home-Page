@@ -8,8 +8,9 @@ const fs = require('fs/promises');
 /*
 * Demonstrations of regular routing.
 */
-router.get('/', async (request) => {request.htmlPage = await fs.readFile('assets/home.html');} , (htmlPage) => {
-  	return new Response(htmlPage);
+router.get('/', async (request, env) => {
+	const html = await fs.readFile('assets/home.html');
+  	return new Response(html);
 })
 
 router.get('/ping', (request, env) => {
