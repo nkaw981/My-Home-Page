@@ -1,7 +1,7 @@
 import { AutoRouter } from 'itty-router'
 import { fetchFromR2 } from './helpers/fetchFromR2';
 import { QueryFromD1 } from './helpers/queryFromD1';
-import { homepage } from './assets/home'
+import homepage from './assets/home'
 
 const router = AutoRouter();
 

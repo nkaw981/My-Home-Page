@@ -7,3 +7,5 @@ const homepage = () =>
     </body>
 </html>
 `
+
+export default homepage
