@@ -1,15 +1,15 @@
 import { AutoRouter } from 'itty-router'
 import { fetchFromR2 } from './helpers/fetchFromR2';
 import { QueryFromD1 } from './helpers/queryFromD1';
+import { readFile } from 'fs/promises'
 
 const router = AutoRouter();
-const fs = require('fs/promises');
 
 /*
 * Demonstrations of regular routing.
 */
 router.get('/', async (request, env) => {
-	const html = await fs.readFile('assets/home.html');
+	const html = await readFile('assets/home.html');
   	return new Response(html);
 })
 
