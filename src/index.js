@@ -1,7 +1,7 @@
 import { AutoRouter } from 'itty-router'
 import { fetchFromR2 } from './helpers/fetchFromR2';
 import { QueryFromD1 } from './helpers/queryFromD1';
-import { readFile } from 'fs/promises'
+import { homepage } from './assets/home'
 
 const router = AutoRouter();
 
@@ -9,8 +9,7 @@ const router = AutoRouter();
 * Demonstrations of regular routing.
 */
 router.get('/', async (request, env) => {
-	const html = await readFile('assets/home.html');
-  	return new Response(html);
+  	return new Response(homepage);
 })
 
 router.get('/ping', (request, env) => {
