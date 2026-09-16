@@ -2,6 +2,7 @@ import { AutoRouter } from 'itty-router'
 import { fetchFromR2 } from './helpers/fetchFromR2';
 import { QueryFromD1 } from './helpers/queryFromD1';
 import homepage from './assets/home'
+import readXML from './routes/readXML';
 
 const router = AutoRouter();
 
@@ -14,11 +15,16 @@ router.get('/', async (request, env) => {
 			'content-type': 'text/html'
 		}
 	});
-})
+});
 
 router.get('/ping', (request, env) => {
 	return new Response(`Pong.`);
-})
+});
+
+router.get('/xml-reader', async (request, env) => {
+	let output = await readXML();
+	return new Response(output);
+});
 
 /*
 * Catch-all erroneous URLs.
