@@ -13,5 +13,5 @@ export default async function() {
 
     const parser = new DOMParser();
     let domData = parser.parseFromString(JSON.stringify(response.body), "text/xml");
-    return JSON.stringify(response.body);
+    return `${response.headers.get("Date")}\n${response.body}`;
 }
