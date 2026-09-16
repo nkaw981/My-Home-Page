@@ -1,7 +1,12 @@
 import { DOMParser } from 'xmldom'
 
 export default async function() {
-    let response = await fetch('https://blog.neurosama.com/feed.xml');
+    let response = await fetch('https://blog.neurosama.com/feed.xml', {
+        cf: {
+            cacheTtl: 600,
+			cacheEverything: true
+        }
+    });
     if (response.status != 200) {
         return `${response.status}, ${response.statusText}`
     } 
