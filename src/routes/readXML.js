@@ -8,5 +8,5 @@ export default async function() {
 
     const parser = new DOMParser();
     let domData = parser.parseFromString(JSON.stringify(response.body), "text/xml");
-    return domData;
+    return JSON.stringify(response.body);
 }
