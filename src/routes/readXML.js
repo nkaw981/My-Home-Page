@@ -18,5 +18,5 @@ export default async function() {
         testString.concat(domData.childNodes.item(i));
         testString.concat("\n\n");
     }
-    return `${domData.childNodes.length}\n\n${testString}\n-------------\n${domData.childNodes(5)}`;
+    return `${domData.childNodes.length}\n\n${testString}\n-------------\n${domData.childNodes.item(5)}`;
 }
