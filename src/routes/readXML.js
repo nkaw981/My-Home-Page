@@ -13,5 +13,5 @@ export default async function() {
 
     const parser = new DOMParser();
     let domData = parser.parseFromString(await response.text(), "text/xml");
-    return `${domData}`;
+    return `${domData.firstChild}`;
 }
