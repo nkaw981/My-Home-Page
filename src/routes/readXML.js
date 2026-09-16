@@ -7,6 +7,6 @@ export default async function() {
     } 
 
     const parser = new DOMParser();
-    let domData = parser.parseFromString(response.body, "text/xml");
+    let domData = parser.parseFromString(JSON.stringify(response.body), "text/xml");
     return domData;
 }
