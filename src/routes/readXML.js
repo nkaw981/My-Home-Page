@@ -1,6 +1,7 @@
 import { DOMParser } from 'xmldom'
 
 export default async function() {
+    console.log("Trying to fetch")
     let response = await fetch('https://blog.neurosama.com/feed.xml');
     if (response.status != 200) {
         return `${response.status}, ${response.statusText}`
