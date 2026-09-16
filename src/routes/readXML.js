@@ -15,7 +15,7 @@ export default async function() {
     let domData = parser.parseFromString(await response.text(), "text/xml").childNodes.item(2);
     let testString = ``;
     for (let i = 0; i < domData.childNodes.length; i++) {
-        testString = testString.concat(domData.childNodes.item(i));
+        testString = testString.concat(`[${i}] ${domData.childNodes.item(i)}`);
         testString = testString.concat("\n\n");
     }
     return `${domData.childNodes.length}\n\n${testString}\n-------------\n${domData.childNodes.item(5)}`;
