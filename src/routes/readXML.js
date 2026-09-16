@@ -13,5 +13,10 @@ export default async function() {
 
     const parser = new DOMParser();
     let domData = parser.parseFromString(await response.text(), "text/xml").childNodes.item(2);
-    return `${domData.childNodes.length}\n\n${domData.childNodes.item(5)}`;
+    const testString = ``;
+    for (let i = 0; i < domData.childNodes.length; i++) {
+        testString.concat(domData.childNodes.item(i));
+        testString.concat("\n\n");
+    }
+    return `${testString}\n-------------\n${domData.childNodes.item(0)}`;
 }
